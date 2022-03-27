@@ -4,53 +4,67 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Funcion {
-    private Zona zonaAsignada;
-    private ArrayList<Pelicula> listaPeliculas;
-
-    private Date horarioInicio;
+    private Zona zonaGeneral;
+    private Zona zonaPreferencial;
+    private Pelicula pelicula;
+    private int horarioInicio;
     private SalaCine sala;
-    private int duracion;
 
-    public Funcion(Zona zonaAsignada, Date horarioInicio, SalaCine sala, int duracion, Pelicula pel1, Pelicula pel2, Pelicula pel3 , Pelicula pel4) {
-        this.zonaAsignada = zonaAsignada;
-        crearListaPeliculas(pel1, pel2, pel3, pel4);
+
+    public Funcion(SalaCine salaAsignada, int horarioInicio, Pelicula pelicula) {
+        this.sala = salaAsignada;
         this.horarioInicio = horarioInicio;
-        this.sala = sala;
-        this.duracion = duracion;
+        this.pelicula= pelicula;
 
     }
 
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
+
     public void crearListaPeliculas(Pelicula pel1, Pelicula pel2, Pelicula pel3, Pelicula pel4) {
-        listaPeliculas = new ArrayList<>();
+        ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
 
         listaPeliculas.add(pel1);
         listaPeliculas.add(pel2);
         listaPeliculas.add(pel3);
         listaPeliculas.add(pel4);
-
     }
 
-    public Zona getZonaAsignada() {
+    /*public Zona getZonaAsignada() {
         return zonaAsignada;
     }
 
     public void setZonaAsignada(Zona zonaAsignada) {
         this.zonaAsignada = zonaAsignada;
+    }*/
+
+    /*public ArrayList<Pelicula> getListaPeliculas() {
+        return listaPeliculas;
     }
 
-    public ArrayList<Pelicula> getListaPeliculas() {
-        return listaPeliculas;
+    public String getListaPeliculasToString(){
+        String listaPeliculasStr = "";
+
+        for(int i = 0; i < 4; i++){
+            listaPeliculasStr = listaPeliculasStr + "["+i+"]" + listaPeliculas.get(i).getNombre() +"\n";
+        }
+        return listaPeliculasStr;
     }
 
     public void setListaPeliculas(ArrayList<Pelicula> listaPeliculas) {
         this.listaPeliculas = listaPeliculas;
-    }
+    }*/
 
-    public Date getHorarioInicio() {
+    public int getHorarioInicio() {
         return horarioInicio;
     }
 
-    public void setHorarioInicio(Date horarioInicio) {
+    public void setHorarioInicio(int horarioInicio) {
         this.horarioInicio = horarioInicio;
     }
 
@@ -60,13 +74,5 @@ public class Funcion {
 
     public void setSala(SalaCine sala) {
         this.sala = sala;
-    }
-
-    public int getDuracion() {
-        return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 }
