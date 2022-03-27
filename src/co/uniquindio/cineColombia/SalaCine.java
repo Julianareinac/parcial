@@ -6,14 +6,35 @@ public class SalaCine {
     private boolean isLlena;
     private Zona zonaPref;
     private Zona zonaNormal;
-    private ArrayList<Integer> sillasOcupadasPref= zonaPref.getSillasOcupadas();
-    private ArrayList<Integer> sillasOcupadasNormal= zonaNormal.getSillasOcupadas();
-    private ArrayList<Integer> sillasTotalesPref= zonaPref.getSillasTotales();
-    private ArrayList<Integer> sillasTotalesNormal= zonaNormal.getSillasTotales();
+    private ArrayList<Funcion> funciones;
 
-    public SalaCine(boolean isLlena, Zona zonaPref) {
-        this.isLlena = isLlena;
-        this.zonaPref = zonaPref;
+    public ArrayList<Funcion> getFunciones() {
+        return funciones;
+    }
+
+    public void setFunciones(ArrayList<Funcion> funciones) {
+        this.funciones = funciones;
+    }
+
+    /*
+        private ArrayList<Integer> sillasOcupadasPref= zonaPref.getSillasOcupadas();
+        private ArrayList<Integer> sillasOcupadasNormal= zonaNormal.getSillasOcupadas();
+        private ArrayList<Integer> sillasTotalesPref= zonaPref.getSillasTotales();
+        private ArrayList<Integer> sillasTotalesNormal= zonaNormal.getSillasTotales();*/
+    private ArrayList<Integer> sillasOcupadasPref;
+    private ArrayList<Integer> sillasOcupadasNormal;
+    private ArrayList<Integer> sillasTotalesPref;
+    private ArrayList<Integer> sillasTotalesNormal;
+
+    public SalaCine() {
+
+        this.zonaPref = new Zona();
+        this.zonaNormal = new Zona();
+
+        sillasOcupadasPref = new ArrayList<>();
+        sillasOcupadasNormal = new ArrayList<>();
+        sillasTotalesPref = new ArrayList<>();
+        sillasTotalesNormal = new ArrayList<>();
     }
 
     public boolean isSalaLlena (){
