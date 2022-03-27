@@ -26,14 +26,7 @@ public class Funcion {
         this.pelicula = pelicula;
     }
 
-    public void crearListaPeliculas(Pelicula pel1, Pelicula pel2, Pelicula pel3, Pelicula pel4) {
-        ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
-
-        listaPeliculas.add(pel1);
-        listaPeliculas.add(pel2);
-        listaPeliculas.add(pel3);
-        listaPeliculas.add(pel4);
-    }
+    
 
     /*public Zona getZonaAsignada() {
         return zonaAsignada;
